@@ -145,7 +145,7 @@ async def botEnd(message: Message, state: FSMContext):
     if message.text != 'Не отправлять':
         await state.update_data(phone = message.contact.phone_number)
     else:
-        await state.update_data(phone = 'Не указано')
+        await state.update_data(phone = None)
     await message.answer(text=messages['QA']['QA_end']['answer'],
                          reply_markup=ReplyKeyboardRemove())
     
@@ -155,10 +155,6 @@ async def botEnd(message: Message, state: FSMContext):
     
     #Если имя или фамилия пользователя не указано
     data = await state.get_data()
-    if data['fName'] is None:
-        data['fName'] = 'Не указано'
-    if data['lName'] is None:
-        data['lName'] = 'Не указано'
 
     #Преобразование индексов для Возраста и Цели изучения в текст
     if data['pType'][0] == 0:
