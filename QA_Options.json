@@ -1,0 +1,51 @@
+{
+    "non_QA": {
+        "introduction": "introduction"
+    },
+
+    "QA": {
+        "QA_type": {
+            "question": "Choose type",
+            "answer": ["Для себя", "Для ребенка"]
+        },
+
+        "QA_age_me": {
+            "question": "Age (me)",
+            "answer": ["от 18 до 25 лет", "от 26 до 35 лет", "от 36 до 45 лет", "старше 45 лет"]
+        },
+
+        "QA_age_child": {
+            "question": "Age (child)",
+            "answer": ["от 3 до 6 лет", "от 7 до 10 лет", "от 11 до 14 лет", "старше 14 лет"]
+        },
+
+        "QA_language": {
+            "question": "Choose language",
+            "answer": ["Английский", "Немецкий", "Испанский", "Китайский", "Франзуский"]
+        },
+
+        "QA_level": {
+            "question": "Choose level",
+            "cases": ["английским", "немецким", "испанским", "китайскийм", "французким"],
+            "answer": ["Вообще ничего не знаю", "Начальный A1", "Средний A2-B1", "Продвинутый B2-C1", "Хочу пройти тест чтобы узнать"]
+        },
+
+        "QA_purpose_me": {
+            "question": "purpose (me)",
+            "answer": ["Для путешествий", "Сдаю ЕГЭ", "Сдаю TOEFL", "Сдаю IELTS", "Просто для себя"]
+        },
+
+        "QA_purpose_child": {
+            "question": "purpose (child)",
+            "answer": ["Для улучшения оценок в школе", "Язык(и) пригодится в жизни", "Язык(и) нужнен для участия в олимпиадах"]
+        },
+
+        "QA_phone": {
+            "question": "Phone pls"
+        },
+
+        "QA_end": {
+            "answer": "Thanks"
+        }
+    }
+}
