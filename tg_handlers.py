@@ -26,7 +26,7 @@ async def botStart(message: Message, state: FSMContext):
     await message.answer(text=messages['non_QA']['introduction'], 
                          reply_markup=tg_keyboard.IKBStart)
     await state.set_state(tg_states.Order.pType)
-    print(f'LOG: User: {message.from_user.id} STARTED test')
+    #print(f'LOG: User: {message.from_user.id} STARTED test')
 
 
 #Выбор типа. Для себя, Для ребенка
@@ -151,7 +151,7 @@ async def botEnd(message: Message, state: FSMContext):
     
     await state.update_data(date = f'{str(datetime.now().strftime("%d.%m.%Y"))} {str(datetime.now().strftime("%H:%M:%S"))}')
     
-    print(f'LOG: User: {message.from_user.id} ENDED test')
+    #print(f'LOG: User: {message.from_user.id} ENDED test')
     
     #Если имя или фамилия пользователя не указано
     data = await state.get_data()
@@ -173,10 +173,10 @@ async def botEnd(message: Message, state: FSMContext):
     #Преобразование индекосв уровней знаний выбранных языков в текст
     data['levels'] = [messages['QA']['QA_level']['answer'][i] for i in data['levels']]
 
-    print(f'LOG: User {message.from_user.id} data FORMATTED:\n{data}')
+    #print(f'LOG: User {message.from_user.id} data FORMATTED:\n{data}')
 
     await formatData(data)
     await state.clear()
-    print(f'LOG: User {message.from_user.id} data CLEAR')
+    #print(f'LOG: User {message.from_user.id} data CLEAR')
     
     
