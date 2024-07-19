@@ -18,6 +18,7 @@ with open('QA_options.json', encoding='utf-8') as f:
 
 #Вступление. При выполнении команды /start
 @router.message(F.text == '/start')
+@router.message(F.text == 'Старт')
 async def botStart(message: Message, state: FSMContext):
     await state.clear()
     await state.update_data(id=message.from_user.id)
@@ -86,8 +87,7 @@ async def pollProcess(poll: PollAnswer, state: FSMContext):
 @router.callback_query(tg_states.Order.level)
 async def botLevel(call: CallbackQuery, state:FSMContext):
     data = await state.get_data()
-    await call.message.answer_poll(question=' '.join([messages['QA']['QA_level']['question'], 
-                                                      messages['QA']['QA_level']['cases'][data['languagesTemp'][0]]]),
+    await call.message.answer_poll(question=messages['QA']['QA_level']['question'].format(messages['QA']['QA_level']['cases'][data['languagesTemp'][0]]),
                                    options=messages['QA']['QA_level']['answer'],
                                    is_anonymous=False,
                                    allows_multiple_answers=False,
