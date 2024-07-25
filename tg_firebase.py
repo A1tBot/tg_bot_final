@@ -18,20 +18,19 @@ async def formatData(data):
     tgUser = {
         'id': data['id'],
         'fName': data['fName'],
-        'lName': data['lName'],
-        'pType': data['pType'],
         'pAge': data['pAge'],
         'languages': data['languages'],
         'levels': data['levels'],
         'purpose': data['purpose'],
         'phone': data['phone'],
-        'date': data['date'],
+        'child': data['child'],
+        'date': data['date']
     }
 
     reference = db.reference(DATABASE_ROOT)
     users = reference.get()
     for i in users:
-        if users[i]['id'] == tgUser['id'] and users[i]['pType'] == tgUser['pType']:
+        if users[i]['id'] == tgUser['id']:
             print(f'LOG: User {tgUser["id"]} firebase data UPDATED')
             return await updateData(DATABASE_ROOT, str(i), tgUser)
     print(f'LOG: User {tgUser["id"]} firebase data ADDED')
